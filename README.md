@@ -48,12 +48,12 @@ Sendo o usuário um Cliente, ele poderá atualizar seu perfil, fazer um pedido, 
 
 #### Clone o projeto:
 ` 
-git clone 
+git clone https://github.com/Herick-Bay/desafio-final-backend.git
 `
 
 #### Entre no diretório:
 ` 
-cd  
+cd desafio-final-backend
 `
 
 #### Instale as dependências:

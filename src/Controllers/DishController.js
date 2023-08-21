@@ -54,19 +54,21 @@ class DishController {
     }
 
     async delete(request, response) {
-        try {
+        const { id } = request.params;
 
-            const { id } = request.params;
-            await knex("DISH")
-                .where({ id })
-                .delete();
+        try {
+            await knex.transaction(async dish => {
+                await dish("DISH")
+                    .where({ id })
+                    .delete();
+            });
 
             return response.json({ message: "Prato deletado com sucesso" });
         } catch (error) {
+
             throw new AppError(error.message, 500);
         }
     }
-
 
     async update(request, response) {
         try {
